@@ -1,0 +1,9 @@
+/* estilos/large.css */
+
+/* Ajusta o grid para exibir os cursos em mais colunas em telas grandes */
+@media (min-width: 768px) {
+    #courses-container {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1000px;
+    }
+}
