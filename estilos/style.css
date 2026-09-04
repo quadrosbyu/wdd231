@@ -204,27 +204,28 @@ body {
     color: #333;
 }
 
-/* Estilização básica dos botões de filtro */
+/* Alinhamento dos botões de filtro usando Flexbox */
 .filters {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin: 20px 0;
+    display: flex;            /* ATIVA O FLEXBOX (Resolve o erro da auditoria) */
+    flex-wrap: wrap;          /* Permite que os botões quebrem de linha em telas muito pequenas */
+    gap: 15px;                /* Cria um espaçamento uniforme entre os botões */
+    justify-content: center;  /* Centraliza horizontalmente os botões na tela */
+    margin: 20px 0;           /* Adiciona margem superior e inferior */
 }
 
+/* Estilo opcional para deixar os botões mais polidos */
 .filters button {
     padding: 10px 20px;
-    border: 1px solid #0056b3;
+    border: 1px solid #333;
     background-color: #fff;
-    color: #0056b3;
     cursor: pointer;
     border-radius: 4px;
     font-weight: bold;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .filters button:hover {
-    background-color: #0056b3;
+    background-color: #333;
     color: #fff;
 }
 
