@@ -1,3 +1,8 @@
+const courses = [
+    { id: "CSE 110", title: "Introduction to Programming", credits: 3, completed: true },
+    // ... os outros cursos aqui
+];
+
 // 1. Array de Cursos (Modifique 'completed' para true nos que você já concluiu)
 const courses = [
     { id: "CSE 110", title: "Introduction to Programming", credits: 3, completed: true },
