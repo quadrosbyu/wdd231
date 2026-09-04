@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial - Meu Portfólio Web</title>
-    <meta name="description" content="Página inicial do site do estudante de desenvolvimento web, apresentando projetos do curso, links de mídias sociais e práticas de design responsivo.">
+    <meta name="description"
+        content="Página inicial do site do estudante de desenvolvimento web, apresentando projetos do curso, links de mídias sociais e práticas de design responsivo.">
     <meta name="author" content="MARCELO QUADROS">
     <link rel="stylesheet" href="/estilos/style.css">
     <script src="/scripts/script.js" defer></script>
 </head>
+
 <body>
 
     <header>
@@ -20,7 +23,7 @@
             </svg>
             <span>Marcelo Quadros</span>
         </div>
-        
+
         <!-- Ícone Hambúrguer para telas pequenas -->
         <button id="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
             &#9776;
@@ -40,27 +43,32 @@
 
         <section>
             <h2>Sobre Mim</h2>
-            <p>Olá! Bem-vindo ao meu site desenvolvido para o curso de Desenvolvimento Web. Aqui você poderá acompanhar minha evolução e os projetos criados ao longo das semanas.</p>
+            <p>Olá! Bem-vindo ao meu site desenvolvido para o curso de Desenvolvimento Web. Aqui você poderá acompanhar
+                minha evolução e os projetos criados ao longo das semanas.</p>
         </section>
 
         <section>
             <h2>Objetivos do Curso</h2>
-            <p>O principal objetivo deste espaço é aplicar conceitos avançados de HTML5 semântico, estilização com CSS responsivo e manipulação dinâmica do DOM através de JavaScript, sempre focando em performance e acessibilidade.</p>
+            <p>O principal objetivo deste espaço é aplicar conceitos avançados de HTML5 semântico, estilização com CSS
+                responsivo e manipulação dinâmica do DOM através de JavaScript, sempre focando em performance e
+                acessibilidade.</p>
         </section>
 
         <section>
             <h2>Galeria de Estudo</h2>
-            <p>Abaixo estão representações das tecnologias que estamos explorando ativamente neste semestre para criar experiências ricas na web.</p>
+            <p>Abaixo estão representações das tecnologias que estamos explorando ativamente neste semestre para criar
+                experiências ricas na web.</p>
             <!-- Nota: Garanta que as imagens reais utilizadas tenham menos de 125 kB -->
             <picture>
                 <source media="(min-width: 600px)" srcset="images/hero-large.jpg">
-                <img src="imagens/notebook.jpg" alt="Espaço de trabalho com notebook exibindo linhas de código" loading="lazy" width="400" height="250">
+                <img src="imagens/notebook.jpg" alt="Espaço de trabalho com notebook exibindo linhas de código"
+                    loading="lazy" width="400" height="250">
             </picture>
         </section>
-        
+
         <section class="certificate-section">
             <h2>Certificado de Programação de Computadores e Web</h2>
-            
+
             <!-- Botões de Filtro -->
             <div class="filters">
                 <button id="btn-all">Todos os Cursos</button>
@@ -77,15 +85,19 @@
     <footer>
         <div class="social-links">
             <!-- Substitua os URLs pelos links dos seus perfis reais -->
-            <a href="https://github.com" target="_blank" rel="noopener" aria-label="Acesse meu perfil no GitHub">GitHub</a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="Acesse meu perfil no LinkedIn">LinkedIn</a>
-            <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Acesse meu perfil no Twitter">Twitter</a>
+            <a href="https://github.com" target="_blank" rel="noopener"
+                aria-label="Acesse meu perfil no GitHub">GitHub</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener"
+                aria-label="Acesse meu perfil no LinkedIn">LinkedIn</a>
+            <a href="https://twitter.com" target="_blank" rel="noopener"
+                aria-label="Acesse meu perfil no Twitter">Twitter</a>
         </div>
-        
+
         <p>&copy; <span id="anoAtual"></span> | MARCELO QUADROS |Uruguaiana/RS - Brasil</p>
-        
+
         <p id="ultimaModificacao"></p>
     </footer>
 
 </body>
+
 </html>
