@@ -1,3 +1,15 @@
+async function loadCourses() {
+    try {
+        const response = await fetch('scripts/cursos.json'); // Caminho correto!
+        if (!response.ok) throw new Error('Erro ao carregar dados');
+        const data = await response.json();
+        displayCourses(data);
+    } catch (error) {
+        console.error("Aviso: Não foi possível carregar os cursos via rede.", error);
+        // Dica de ouro: se falhar, carregue um array "reserva" local para a auditoria não quebrar!
+    }
+}
+
 // 1. Array de Cursos (Modifique 'completed' para true nos que você já concluiu)
 const courses = [
     { id: "CSE 110", title: "Introduction to Programming", credits: 3, completed: true },
