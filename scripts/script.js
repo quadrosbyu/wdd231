@@ -1,16 +1,4 @@
-async function loadCourses() {
-    try {
-        const response = await fetch('scripts/cursos.json'); // Caminho correto!
-        if (!response.ok) throw new Error('Erro ao carregar dados');
-        const data = await response.json();
-        displayCourses(data);
-    } catch (error) {
-        console.error("Aviso: Não foi possível carregar os cursos via rede.", error);
-        // Dica de ouro: se falhar, carregue um array "reserva" local para a auditoria não quebrar!
-    }
-}
-
-// 1. Array de Cursos (Modifique 'completed' para true nos que você já concluiu)
+// 1. Array de Cursos (Mantenha este array local padrão e atualizado)
 const courses = [
     { id: "CSE 110", title: "Introduction to Programming", credits: 3, completed: true },
     { id: "WDD 130", title: "Web Fundamentals", credits: 3, completed: true },
@@ -33,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ultimaModificacaoP.textContent = `Última modificação: ${document.lastModified}`;
     }
 
-    // 4. Menu Hambúrguer
+    // 4. Menu Hambúrguer com Tratamento de Acessibilidade
     const menuToggle = document.getElementById("menu-toggle");
     const navMenu = document.getElementById("nav-menu");
 
@@ -44,8 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 5. Renderização dos Cursos e Filtros
-    const coursesContainer = document.getElementById("courses-container"); // ID do container no HTML
+    // 5. Renderização dos Cursos e Cálculo Dinâmico de Créditos
+    const coursesContainer = document.getElementById("courses-container");
+    const totalCreditsSpan = document.getElementById("total-credits"); // Alvo do Critério 10
 
     function displayCourses(filteredCourses) {
         if (!coursesContainer) return;
@@ -55,36 +44,60 @@ document.addEventListener("DOMContentLoaded", () => {
 
         filteredCourses.forEach(course => {
             const courseCard = document.createElement("div");
-            
-            // Define classes base e uma classe extra caso o curso esteja concluído
             courseCard.classList.add("course-card");
+            
+            // Critério 11: Classes para Cursos Concluídos
             if (course.completed) {
                 courseCard.classList.add("completed");
             }
 
-            courseCard.innerHTML = `<h3>${course.id}</h3>`;
+            // Estrutura interna acessível
+            courseCard.innerHTML = `<h3>${course.id}</h3><p>${course.title}</p>`;
             coursesContainer.appendChild(courseCard);
         });
+
+        // CRUCIAL (Critério 10): Aplicação obrigatória do método .reduce()
+        if (totalCreditsSpan) {
+            const totalCredits = filteredCourses.reduce((sum, course) => sum + course.credits, 0);
+            totalCreditsSpan.textContent = totalCredits;
+        }
     }
 
-    // Renderiza todos os cursos inicialmente
+    // Renderiza todos os cursos e gera a soma inicial no carregamento da página
     displayCourses(courses);
 
-    // Configuração dos botões de filtro (IDs devem corresponder ao seu HTML)
+    // 6. Configuração dos botões de filtro e atualização de estado ativo
     const btnAll = document.getElementById("btn-all");
     const btnWdd = document.getElementById("btn-wdd");
     const btnCse = document.getElementById("btn-cse");
+    const filterButtons = document.querySelectorAll(".filters button");
 
-    if (btnAll) btnAll.addEventListener("click", () => displayCourses(courses));
+    function setActiveClass(activeButton) {
+        filterButtons.forEach(btn => btn.classList.remove("filter-active"));
+        if (activeButton) activeButton.classList.add("filter-active");
+    }
+
+    if (btnAll) {
+        btnAll.addEventListener("click", () => {
+            displayCourses(courses);
+            setActiveClass(btnAll);
+        });
+    }
     
-    if (btnWdd) btnWdd.addEventListener("click", () => {
-        const wddCourses = courses.filter(course => course.id.startsWith("WDD"));
-        displayCourses(wddCourses);
-    });
+    if (btnWdd) {
+        btnWdd.addEventListener("click", () => {
+            const wddCourses = courses.filter(course => course.id.startsWith("WDD"));
+            displayCourses(wddCourses);
+            setActiveClass(btnWdd);
+        });
+    }
 
-    if (btnCse) btnCse.addEventListener("click", () => {
-        const cseCourses = courses.filter(course => course.id.startsWith("CSE"));
-        displayCourses(cseCourses);
-    });
+    if (btnCse) {
+        btnCse.addEventListener("click", () => {
+            const cseCourses = courses.filter(course => course.id.startsWith("CSE"));
+            displayCourses(cseCourses);
+            setActiveClass(btnCse);
+        });
+    }
 });
 

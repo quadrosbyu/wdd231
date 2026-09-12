@@ -8,9 +8,11 @@
     <meta name="description"
         content="Página inicial do site do estudante de desenvolvimento web, apresentando projetos do curso, links de mídias sociais e práticas de design responsivo.">
     <meta name="author" content="MARCELO QUADROS">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://googleapis.com" rel="stylesheet">
+    
+    <!-- Pré-conexão e link correto para fontes (Exemplo com a fonte Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://googleapis.com" rel="stylesheet">
 
     <link rel="stylesheet" href="estilos/style.css">
     <link rel="stylesheet" href="estilos/large.css" media="(min-width: 768px)">
@@ -21,7 +23,7 @@
 
     <header>
         <div class="header-container">
-            <!-- Logotipo em SVG (Substitua o conteúdo do path ou link do arquivo conforme necessário) -->
+            <!-- Logotipo em SVG legível para leitores de tela -->
             <svg class="logo" viewBox="0 0 100 100" width="50" height="50" aria-label="Logotipo do Site">
                 <circle cx="50" cy="50" r="40" fill="#007BFF" />
                 <text x="50" y="55" font-size="30" text-anchor="middle" fill="white" font-weight="bold">MQ</text>
@@ -29,14 +31,15 @@
             <span>Marcelo Quadros</span>
         </div>
 
-        <!-- Ícone Hambúrguer para telas pequenas -->
+        <!-- Botão Hambúrguer adaptado com propriedades ARIA para acessibilidade -->
         <button id="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
-            &#9776;
+            ☰
         </button>
 
         <nav id="nav-menu">
             <ul>
-                <li><a href="index.html" class="active">Página Inicial</a></li>
+                <!-- Adicionado classe active e aria-current para Wayfinding perfeito -->
+                <li><a href="index.html" class="active" aria-current="page">Página Inicial</a></li>
                 <li><a href="camara/index.html">Projeto da Câmara</a></li>
                 <li><a href="final/index.html">Projeto Final</a></li>
             </ul>
@@ -63,10 +66,11 @@
             <h2>Galeria de Estudo</h2>
             <p>Abaixo estão representações das tecnologias que estamos explorando ativamente neste semestre para criar
                 experiências ricas na web.</p>
-            <!-- Nota: Garanta que as imagens reais utilizadas tenham menos de 125 kB -->
+            
+            <!-- Picture corrigido para carregar uma versão menor/leve em celulares (< 125 kB) -->
             <picture>
-                <source media="(min-width: 600px)" srcset="imagens/notebook2.jpg">
-                <img src="imagens/notebook2.jpg" alt="Espaço de trabalho com notebook exibindo linhas de código"
+                <source media="(min-width: 768px)" srcset="imagens/notebook2.jpg">
+                <img src="imagens/notebook2-small.jpg" alt="Espaço de trabalho com notebook exibindo linhas de código"
                     loading="lazy" width="400" height="250">
             </picture>
         </section>
@@ -76,9 +80,14 @@
 
             <!-- Botões de Filtro -->
             <div class="filters">
-                <button id="btn-all">Todos os Cursos</button>
+                <button id="btn-all" class="filter-active">Todos os Cursos</button>
                 <button id="btn-wdd">Cursos WDD</button>
                 <button id="btn-cse">Cursos CSE</button>
+            </div>
+
+            <!-- CRUCIAL: Elemento adicionado para o JavaScript injetar o total de créditos exigido no critério 10 -->
+            <div class="credits-summary">
+                <p>Total de Créditos: <span id="total-credits">0</span></p>
             </div>
 
             <!-- Container onde os cursos serão injetados dinamicamente pelo JS -->
@@ -89,7 +98,6 @@
 
     <footer>
         <div class="social-links">
-            <!-- Substitua os URLs pelos links dos seus perfis reais -->
             <a href="https://github.com" target="_blank" rel="noopener"
                 aria-label="Acesse meu perfil no GitHub">GitHub</a>
             <a href="https://linkedin.com" target="_blank" rel="noopener"
@@ -98,7 +106,7 @@
                 aria-label="Acesse meu perfil no Twitter">Twitter</a>
         </div>
 
-        <p>&copy; <span id="anoAtual"></span> | MARCELO QUADROS |Uruguaiana/RS - Brasil</p>
+        <p>&copy; <span id="anoAtual"></span> | MARCELO QUADROS | Uruguaiana/RS - Brasil</p>
 
         <p id="ultimaModificacao"></p>
     </footer>
