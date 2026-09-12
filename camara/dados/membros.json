@@ -1,0 +1,65 @@
+[
+  {
+    "nome": "Logística Sul Aduaneira",
+    "endereco": "Av. Presidente Vargas, 1420 - Centro",
+    "telefone": "(55) 3411-9000",
+    "website": "https://logisticsul.com.br",
+    "imagem": "imagens/empresa-logistica.jpg",
+    "nivel": 3,
+    "ramo": "Logística e Comércio Exterior"
+  },
+  {
+    "nome": "Restaurante e Churrascaria Fronteira",
+    "endereco": "Rua Bento Martins, 2211 - Centro",
+    "telefone": "(55) 3412-1515",
+    "website": "https://churrascariafronteira.com.br",
+    "imagem": "imagens/empresa-restaurante.jpg",
+    "nivel": 2,
+    "ramo": "Alimentação e Eventos"
+  },
+  {
+    "nome": "Arrozal Pampeano S.A.",
+    "endereco": "BR-472, Km 575 - Zona Rural",
+    "telefone": "(55) 3413-8800",
+    "website": "https://arrozalpampeano.com.br",
+    "imagem": "imagens/empresa-agronegocio.jpg",
+    "nivel": 3,
+    "ramo": "Agronegócio"
+  },
+  {
+    "nome": "Boutique Pampa Chic",
+    "endereco": "Rua Santana, 3045 - Centro",
+    "telefone": "(55) 99988-1122",
+    "website": "https://pampachic.com.br",
+    "imagem": "imagens/empresa-boutique.jpg",
+    "nivel": 1,
+    "ramo": "Comércio Varejista"
+  },
+  {
+    "nome": "Hotel Fronteira Oeste",
+    "endereco": "Rua Duque de Caxias, 1890 - São Miguel",
+    "telefone": "(55) 3414-4400",
+    "website": "https://hotelfronteiraoeste.com.br",
+    "imagem": "imagens/empresa-hotel.jpg",
+    "nivel": 2,
+    "ramo": "Hotelaria e Turismo"
+  },
+  {
+    "nome": "Conexão Info Internet",
+    "endereco": "Rua Flores da Cunha, 1205 - Centro",
+    "telefone": "(55) 3415-7788",
+    "website": "https://conexaoinfo.com.br",
+    "imagem": "imagens/empresa-internet.jpg",
+    "nivel": 1,
+    "ramo": "Tecnologia e Serviços"
+  },
+  {
+    "nome": "Uruguayana Freeshop",
+    "endereco": "Rua Domingos de Almeida, 2400 - Centro",
+    "telefone": "(55) 3412-9900",
+    "website": "https://uruguayanafreeshop.com.br",
+    "imagem": "imagens/empresa-freeshop.jpg",
+    "nivel": 3,
+    "ramo": "Comércio Varejista / Importados"
+  }
+]
