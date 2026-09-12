@@ -1,0 +1,253 @@
+/* Definição de Variáveis de Cor de Acordo com o Planejamento */
+:root {
+    --cor-primaria: #1E3A8A;   /* Azul Marinho */
+    --cor-secundaria: #0D9488; /* Teal/Verde azulado */
+    --cor-fundo: #F8FAFC;      /* Off-white limpo */
+    --cor-texto: #1E293B;      /* Cinza escuro legível */
+    --cor-card-bg: #FFFFFF;
+    --fonte-principal: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header & Navegação */
+header {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 1rem;
+    position: relative;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-container h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.tagline {
+    margin: 5px 0 0 0;
+    color: #CBD5E1;
+    font-size: 0.9rem;
+}
+
+/* Menu Responsivo Hambúrguer */
+#menuBtn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    position: absolute;
+    right: 1rem;
+    top: 1.2rem;
+    cursor: pointer;
+    display: block;
+}
+
+nav {
+    display: none; /* Escondido por padrão no Mobile */
+    margin-top: 1rem;
+}
+
+nav.open {
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem;
+    border-bottom: 1px solid #2563EB;
+}
+
+nav ul li a.active, nav ul li a:hover {
+    background-color: var(--cor-secundaria);
+}
+
+/* Estrutura Principal */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.diretorio-controle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.botoes-alternadores button {
+    background-color: #E2E8F0;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.botoes-alternadores button.active, .botoes-alternadores button:hover {
+    background-color: var(--cor-secundaria);
+    color: white;
+}
+
+/* --- MODO LAYOUT 1: GRADE (GRID VIEW) --- */
+.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.grid-view .membro-card {
+    background-color: var(--cor-card-bg);
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-view .membro-card img {
+    max-width: 120px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+/* --- MODO LAYOUT 2: LISTA (LIST VIEW) --- */
+.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.list-view .membro-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cor-card-bg);
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #E2E8F0;
+    border-radius: 4px;
+}
+
+/* Ajustes finos do cartão na lista */
+.list-view .membro-card img {
+    display: none; /* Oculta a imagem no formato de lista compacta */
+}
+
+.list-view .membro-card .detalhes-contato {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.list-view .membro-card .detalhes-contato p {
+    margin: 0;
+}
+
+/* Badges de Nível de Associação */
+.badge {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 50px;
+    text-transform: uppercase;
+}
+.nivel-1 { background-color: #E2E8F0; color: #475569; }
+.nivel-2 { background-color: #CBD5E1; color: #1E293B; border: 1px solid #94A3B8; }
+.nivel-3 { background-color: #FEF08A; color: #854D0E; border: 1px solid #FACC15; }
+
+/* Rodapé */
+footer {
+    background-color: #1E293B;
+    color: #94A3B8;
+    padding: 2rem 1rem;
+    margin-top: 4rem;
+    font-size: 0.9rem;
+    border-top: 4px solid var(--cor-secundaria);
+}
+
+.footer-info, .footer-dev {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-dev {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #334155;
+}
+
+/* --- MEDIA QUERIES (DESKTOP) --- */
+@media (min-width: 768px) {
+    #menuBtn {
+        display: none; /* Esconde hambúrguer no Desktop */
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1.5rem;
+        background-color: transparent;
+    }
+
+    body {
+        background-color: var(--cor-fundo);
+    }
+
+    header::before {
+        content: "";
+        position: absolute;
+        top:0; left:0; right:0; bottom:0;
+        background-color: var(--cor-primaria);
+        z-index: -1;
+    }
+
+    nav {
+        display: block;
+        margin-top: 0;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 1rem;
+    }
+
+    nav ul li a {
+        border-bottom: none;
+        border-radius: 4px;
+        padding: 0.5rem 1rem;
+    }
+}
